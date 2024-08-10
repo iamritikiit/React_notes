@@ -1,0 +1,282 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f0f2f5; /* Light background for the entire app */
+  font-family: Arial, sans-serif;
+}
+
+.left-part {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  padding: 1rem; /* Converted from 10px */
+  background-color: #ffffff; /* Light background for better contrast */
+  border-radius: 0.8rem; /* Rounded corners for a softer look */
+  /* Subtle shadow for depth */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Converted from 15px */
+  width: 90%; /* Converted from 90% */
+  padding: 1rem; /* Converted from 10px */
+  background-color: #ffffff;
+  border-radius: 0.8rem; /* Converted from 8px */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Converted for better shadow effect */
+}
+
+.header h1 {
+  font-size: 2em; /* Kept as is */
+  font-weight: 600;
+  color: #343a40;
+  margin-right: 1.25rem; /* Converted from 20px */
+}
+
+.header img {
+  width: 3.125rem; /* Converted from 50px */
+  height: 3.125rem; /* Converted from 50px */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.header img:hover {
+  transform: scale(1.1); /* Slightly larger on hover */
+}
+
+.notes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex-grow: 1;
+  max-height: 16rem; /* Converted from 250px */
+  overflow-y: auto;
+}
+
+.note-item {
+  position: relative;
+  padding: 1rem; /* Converted from 10px */
+  margin: 0.625rem 0; /* Converted from 8px */
+  background-color: #eaeaea;
+  border-radius: 0.3125rem; /* Converted from 5px */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.625rem; /* Converted from 10px */
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.note-item:hover .delete-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.note-item:hover {
+  background-color: #d5d5d5; /* Optional: change color on hover */
+}
+
+.right-part {
+  display: block;
+  margin-bottom: 1rem; /* Converted from 10px */
+  padding: 1.6rem; /* Converted from 15px */
+  background-color: #ffffff;
+  border-radius: 0.8rem; /* Rounded corners */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.right-part > div {
+  display: flex;
+   /* Converted from 15px */
+}
+
+.right-part > div:first-child {
+  gap: 0.75rem; /* Converted from 12px */
+  margin-bottom: 1rem;
+}
+
+.right-part > div:nth-child(2) {
+  gap: 1.25rem; /* Converted from 20px */
+}
+
+.right-part button {
+  font-size: 0.9rem; /* Converted from 0.9em */
+  font-weight: 400;
+  color: #343a40;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Align text vertically */
+  border: none;
+  background-color: transparent; /* Transparent background */
+}
+
+.right-part .btn {
+  background-color: #007bff; /* Blue background for Write and Preview */
+  color: #fff;
+  padding: 0.5rem 0.75rem; /* Converted from 8px 12px */
+  border-radius: 0.25rem; /* Rounded corners */
+  cursor: pointer;
+}
+
+.right-part img {
+  width: 1.5rem; /* Converted from 24px */
+  height: 1.5rem; /* Converted from 24px */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.right-part > div:nth-child(2) img {
+  width: 1.75rem; /* Converted from 28px */
+  height: 1.75rem; /* Converted from 28px */
+}
+
+.right-part img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Media Query for Phones */
+@media (max-width: 48em) { /* 768px in em */
+  .main-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-body {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+
+  .right-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .notes-list {
+    width: 90%;
+    max-height: 9rem; 
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f0f2f5;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+
+  .note-item {
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .note-item:hover {
+    background-color: #d5d5d5;
+  }
+
+  .note-item:hover .delete-icon {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .delete-icon {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  }
+
+  .right-part {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .right-part > div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .right-part button {
+    font-size: 1rem;
+    padding: 0.75rem;
+    background-color: transparent; /* Transparent background */
+    color: #343a40; /* Darker text color */
+    border: none; /* Remove default border */
+    border-radius: 0.25rem; /* Rounded corners */
+    cursor: pointer;
+    flex: 1; /* Make buttons take equal space */
+  }
+
+  .right-part .btn {
+    background-color: #007bff; /* Blue background for Write and Preview */
+    color: #fff; /* White text color */
+    flex: initial; /* Keep the original width for these buttons */
+  }
+
+  .right-part img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .right-part .btn img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .right-part > div:nth-child(2) img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .writing-section {
+    flex: 1;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+}
